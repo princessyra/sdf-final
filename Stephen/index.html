@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learning Section</title>
+<link rel="icon" type="image/x-icon" href="C:\Users\Stephen\Documents\SDF Finals\wdwlogo-removebg-preview.png">
+<style>
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background-color: #001529; /* fallback color */
+  }
+
+  /* Background image styling */
+  #background-img {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* Top-left logo styling */
+  #logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+  }
+  #logo img {
+    width: 125%;
+    height: auto;
+  }
+
+  /* Heading */
+  h1 {
+    margin-top: 90px; /* spacing below logo */
+    font-size: 2.5rem;
+    font-weight: normal;
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Main content container */
+  .container {
+  margin-top: 80px;
+  width: 500%;
+  max-width: 2000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* <-- vertical centering */
+  gap: 20px;
+  z-index: 20;
+  position: relative;
+}
+
+  /* Left side: YouTube video */
+  .video-wrapper {
+    flex-basis: 65%;
+    max-width: 1080px; /* roughly 720p width */
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    height: 600px; /* 16:9 ratio for 720px width */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  }
+
+  /* Right side: Accordion */
+.accordion-wrapper {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* center the group vertically */
+  gap: 20px;                /* space between buttons */
+}
+
+  /* Accordion button styles */
+ .accordion-btn {
+  height: 65px; /* fixed height for all buttons */
+  line-height: 65px; /* vertically center text inside */
+  background: linear-gradient(145deg, #111855, #0a144f);
+  border: none;
+  border-radius: 60px;
+  color: #a8a9af;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 20px;  /* only horizontal padding now */
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: inset 0 5px 15px rgba(38, 54, 131, 0.44);
+  display: flex;           /* make button a flex container */
+  align-items: center;     /* vertically center content */
+}
+.accordion-btn::after {
+  content: "▼";
+  position: absolute;
+  right: 20px;
+  color: #6c74e6;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+  .accordion-btn.active::after {
+    transform: rotate(180deg);
+  }
+  .accordion-btn:hover {
+    background: linear-gradient(145deg, #282b73, #202659);
+    color: #ccd1ff;
+  }
+
+  /* Accordion content panel */
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #143270;
+    border-radius: 10px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .accordion-content.open {
+    padding: 12px 20px;
+    max-height: 200px; /* enough to show all content */
+  }
+  .accordion-content a {
+    display: block;
+    margin: 6px 0;
+    color: #a2b2d2;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .accordion-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* Lesson bold text */
+  .lesson-title {
+    color: #6678bb;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 900px;
+      gap: 60px;
+    }
+    .video-wrapper iframe {
+      height: 360px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 30px;
+      max-width: 90%;
+    }
+    .video-wrapper, .accordion-wrapper {
+      flex-basis: 30%;
+      max-width: none;
+    }
+    .video-wrapper iframe {
+      height: 200px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Background image -->
+<img id="background-img" src="C:\Users\Stephen\Documents\SDF Finals\24ca2d9a51d1a44d3eb5fc6b4dc69657.jpg" alt="Background gradient wave" />
+
+<!-- Logo top-left -->
+<div id="logo" title="Website Logo">
+  <img src="C:\Users\Stephen\Documents\SDF Finals\wdwlogo-removebg-preview.png" alt="WD Logo" />
+</div>
+
+<!-- Centered heading -->
+<h1>HTML Learning</h1>
+
+<div class="container">
+  <!-- YouTube video embed -->
+  <div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/salY_Sm6mv4?si=nY1poNHL465DvZ2N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <!-- Accordion menu on right -->
+  <div class="accordion-wrapper">
+    <button class="accordion-btn active">Getting started with html</button>
+    <div class="accordion-content open">
+      <a href="#" class="lesson-title" target="_blank" rel="noopener noreferrer">Lesson 1 :</a> 
+      <a href="#" target="_blank" rel="noopener noreferrer">The Core Web Technology</a>
+      <a href="#" class="lesson-title" target="_blank" rel="noopener noreferrer">Lesson 2 :</a> 
+      <a href="#" target="_blank" rel="noopener noreferrer">Tags and Elements</a>
+    </div>
+
+    <button class="accordion-btn">Using Attributes</button>
+    <div class="accordion-content"></div>
+
+    <button class="accordion-btn">Mastering HTML</button>
+    <div class="accordion-content"></div>
+  </div>
+</div>
+
+<script>
+  // Accordion toggle logic
+  const buttons = document.querySelectorAll('.accordion-btn');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => {
+        if (b !== btn) {
+          b.classList.remove('active');
+          b.nextElementSibling.classList.remove('open');
+        }
+      });
+
+      btn.classList.toggle('active');
+      btn.nextElementSibling.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
