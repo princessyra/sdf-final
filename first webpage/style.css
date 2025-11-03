@@ -1,0 +1,100 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0030, #5a006e, #001f60);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Contact link */
+header {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.contact-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #ff00cc;
+}
+
+/* Hero section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* Top logo and title */
+.top-section {
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00c8ff;
+}
+
+.site-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Container box */
+.content-box {
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+/* Text */
+.content-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #f0eaff;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #b46cff;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b46cff;
+  transform: scale(1.05);
+}
